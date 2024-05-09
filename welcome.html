@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <h2>환영합니다! <span id="username"></span></h2>
+    <p>이것은 데모 페이지로 간단하게 구현해본 웹 페이지입니다.</p>
+    <button onclick="goToGitHub()">Go to my GITHUB</button>
+
+    <script>
+        function goToGitHub() {
+            window.location.href = "https://github.com/anaconda-1544";
+        }
+
+        // URL에서 사용자 이름 파라미터를 읽어와서 화면에 표시
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+
+        // if username is NULL, print "Guest"
+	document.getElementById('username').innerText = username || "Guest";
+    </script>
+</body>
+</html>
