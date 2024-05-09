@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>환영합니다! <span id="username"></span></h2>
-    <p>이것은 데모 페이지로 간단하게 구현해본 웹 페이지입니다.</p>
-    <p>HTML ONLY PAGE!!!!</p>
+    <div class="container">
+        <h2>환영합니다! <span id="username"></span></h2>
+        <p>이것은 데모 페이지로 간단하게 구현해본 웹 페이지입니다.</p>
+        <p>HTML WITH CSS</p>
+        <button onclick="goToGitHub()">Go to my GITHUB</button>
+        <button onclick="goToNextPage()">Go to page 2</button>
+        <button onclick="goToMBTIPage()">MBTI TEST</button>
 
-    <button onclick="goToGitHub()">Go to my GITHUB</button>
-    <button onclick="goToNextPage()">Go to next page(with CSS)</button>
+    </div>
 
     <script>
         function goToGitHub() {
@@ -27,7 +31,11 @@
 
         // 다음 페이지로 이동하는 함수
         function goToNextPage() {
-            window.location.href = "./page_2.html"; // 다음 페이지의 경로로 수정하세요
+            window.location.href = "page_3.html"; // 다음 페이지의 경로로
+        }
+        //간단한 MBTI 검사 페이지
+        function goToMBTIPage() {
+            window.location.href = "mbti_demo.html"; // 다음 페이지의 경로로
         }
     </script>
 </body>

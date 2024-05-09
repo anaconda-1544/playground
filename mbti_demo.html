@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MBTI Personality Test</h1>
+        <form id="mbtiForm">
+            <!-- Extraversion - Introversion -->
+            <div class="question">
+                <p>1. You enjoy vibrant social events with lots of people.</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q1" value="E">
+                        Agree
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="I">
+                        Disagree
+                    </label>
+                </div>
+            </div>
+
+            <!-- Sensing - Intuition -->
+            <div class="question">
+                <p>2. You trust information that is tangible and concrete.</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q2" value="S">
+                        Agree
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="N">
+                        Disagree
+                    </label>
+                </div>
+            </div>
+
+            <!-- Thinking - Feeling -->
+            <div class="question">
+                <p>3. You make decisions based on logic and objective analysis.</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q3" value="T">
+                        Agree
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="F">
+                        Disagree
+                    </label>
+                </div>
+            </div>
+
+            <!-- Judging - Perceiving -->
+            <div class="question">
+                <p>4. You prefer a structured and organized approach to work and life.</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q4" value="J">
+                        Agree
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="P">
+                        Disagree
+                    </label>
+                </div>
+            </div>
+
+            <button type="button" onclick="submitTest()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function submitTest() {
+    // 각 차원에 대한 사용자의 답변을 가져옴
+    var e = document.querySelector('input[name="q1"]:checked').value;
+    var s = document.querySelector('input[name="q2"]:checked').value;
+    var t = document.querySelector('input[name="q3"]:checked').value;
+    var j = document.querySelector('input[name="q4"]:checked').value;
+
+    // 각 차원에 대한 답변을 조합하여 MBTI 유형 계산
+    var mbtiType = e + s + t + j;
+
+    // MBTI 유형에 따라 결과를 표시
+    var resultText;
+    switch (mbtiType) {
+        case "ESTJ":
+            resultText = "Your MBTI type is ESTJ - The Supervisor.";
+            break;
+        case "ESTP":
+            resultText = "Your MBTI type is ESTP - The Entrepreneur.";
+            break;
+        case "ESFJ":
+            resultText = "Your MBTI type is ESFJ - The Provider.";
+            break;
+        case "ESFP":
+            resultText = "Your MBTI type is ESFP - The Performer.";
+            break;
+        case "ENTJ":
+            resultText = "Your MBTI type is ENTJ - The Commander.";
+            break;
+        case "ENTP":
+            resultText = "Your MBTI type is ENTP - The Visionary.";
+            break;
+        case "ENFJ":
+            resultText = "Your MBTI type is ENFJ - The Teacher.";
+            break;
+        case "ENFP":
+            resultText = "Your MBTI type is ENFP - The Champion.";
+            break;
+        case "ISTJ":
+            resultText = "Your MBTI type is ISTJ - The Inspector.";
+            break;
+        case "ISTP":
+            resultText = "Your MBTI type is ISTP - The Crafter.";
+            break;
+        case "ISFJ":
+            resultText = "Your MBTI type is ISFJ - The Protector.";
+            break;
+        case "ISFP":
+            resultText = "Your MBTI type is ISFP - The Composer.";
+            break;
+        case "INTJ":
+            resultText = "Your MBTI type is INTJ - The Architect.";
+            break;
+        case "INTP":
+            resultText = "Your MBTI type is INTP - The Logician.";
+            break;
+        case "INFJ":
+            resultText = "Your MBTI type is INFJ - The Advocate.";
+            break;
+        case "INFP":
+            resultText = "Your MBTI type is INFP - The Mediator.";
+            break;
+        default:
+            resultText = "Unable to determine your MBTI type.";
+    }
+
+    // 결과 표시
+    alert(resultText);
+}
+
+        
+    </script>
+</body>
+</html>

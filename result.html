@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Result</title>
+</head>
+<body>
+    <h1>MBTI Test Result</h1>
+    <div id="result"></div>
+
+    <script>
+        window.onload = function() {
+            var result = window.location.search.substr(1); // URL에서 쿼리 문자열을 가져옴
+            document.getElementById("result").innerText = result; // 결과를 표시
+        }
+    </script>
+</body>
+</html>
